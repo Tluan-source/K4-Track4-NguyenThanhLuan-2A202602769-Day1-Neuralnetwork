@@ -154,7 +154,7 @@ git pull                                              # lấy repo (hoặc: git 
 python scripts/split_data.py                          # tạo data/processed/train.npz và eval.npz
 mkdir -p submission_<MSSV> && cp -r code submission_<MSSV>/code
 # mở submission_<MSSV>/code/lab.ipynb, hoàn thiện các file .py và notebook
-python scripts/evaluate.py --pred submission_<MSSV>/predictions_eval.csv --out submission_<MSSV>/eval_result.json
+python scripts/evaluate.py --pred submission_2A202602769/predictions_eval.csv --out submission_2A202602769/eval_result.json
 ```
 
 Trên Colab: `git clone` repo vào `/content`, rồi làm tương tự (xem ô đầu của `lab.ipynb`).
