@@ -132,7 +132,8 @@ def iterate_batches(X, y, batch_size: int, generator: torch.Generator | None = N
         raise ValueError("batch_size must be > 0")
     n = len(X)
     if shuffle:
-        perm = torch.randperm(n, device=X.device, generator=generator)
+        # The seeded generator is CPU-based; move the permutation to the data device.
+        perm = torch.randperm(n, generator=generator).to(X.device)
     else:
         perm = torch.arange(n, device=X.device)
     for start in range(0, n, batch_size):
